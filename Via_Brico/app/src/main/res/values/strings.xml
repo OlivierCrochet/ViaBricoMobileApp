@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Via_Brico</string>
+    <string name="user">Username</string>
+    <string name="password">Password</string>
+    <string name="button_co">Connexion</string>
+</resources>
