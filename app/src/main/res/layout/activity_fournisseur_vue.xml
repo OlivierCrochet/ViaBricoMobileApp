@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout_vue"
+    tools:context=".fournisseurVueActivity"
+    android:background="@drawable/gradient"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/name_app_vue"
+        android:text="@string/app_name"
+        android:textSize="@dimen/nom_app_all"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/fiche_detail_vue"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fiche_detail_vue"
+        android:text="@string/fiche_vue"
+        android:textSize="@dimen/balises_vue"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_app_vue"
+        app:layout_constraintBottom_toTopOf="@id/layout_fournisseur_vue"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout_fournisseur_vue"
+        android:background="@drawable/border"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fiche_detail_vue"
+        app:layout_constraintBottom_toTopOf="@id/bouton_retour_vue">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/balise_name_vue"
+            android:text="@string/balise_name_vue"
+            android:textSize="@dimen/balises_vue"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@id/layout_fournisseur_vue"
+            app:layout_constraintRight_toRightOf="@id/layout_fournisseur_vue"
+            app:layout_constraintTop_toTopOf="@id/layout_fournisseur_vue"
+            app:layout_constraintBottom_toTopOf="@id/layout_name_vue"/>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/layout_name_vue"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="@id/layout_fournisseur_vue"
+            app:layout_constraintRight_toRightOf="@id/layout_fournisseur_vue"
+            app:layout_constraintTop_toBottomOf="@id/balise_name_vue"
+            app:layout_constraintBottom_toTopOf="@id/balise_adresse_vue">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/name_fournisseur_vue"
+                android:text="@string/nom_fournisseur"
+                app:layout_constraintLeft_toLeftOf="@id/layout_name_vue"
+                app:layout_constraintTop_toTopOf="@id/layout_name_vue"
+                app:layout_constraintBottom_toBottomOf="@id/layout_name_vue"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bouton_pen_name_vue"
+                android:src="@drawable/pen"
+                android:background="@null"
+                android:contentDescription="@string/content_description_vue"
+                app:layout_constraintRight_toRightOf="@id/layout_name_vue"
+                app:layout_constraintTop_toTopOf="@id/layout_name_vue"
+                app:layout_constraintBottom_toBottomOf="@id/layout_name_vue" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/balise_adresse_vue"
+            android:text="@string/balise_adresse_vue"
+            android:textSize="@dimen/balises_vue"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@id/layout_fournisseur_vue"
+            app:layout_constraintRight_toRightOf="@id/layout_fournisseur_vue"
+            app:layout_constraintTop_toBottomOf="@id/layout_name_vue"
+            app:layout_constraintBottom_toTopOf="@id/layout_adresse_vue"/>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/layout_adresse_vue"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="@id/layout_fournisseur_vue"
+            app:layout_constraintRight_toRightOf="@id/layout_fournisseur_vue"
+            app:layout_constraintTop_toBottomOf="@id/balise_adresse_vue"
+            app:layout_constraintBottom_toTopOf="@id/balise_telephone_vue">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/adresse_fournisseur_vue"
+                android:text="@string/adresse_vue"
+                app:layout_constraintLeft_toLeftOf="@id/layout_adresse_vue"
+                app:layout_constraintTop_toTopOf="@id/layout_adresse_vue"
+                app:layout_constraintBottom_toBottomOf="@id/layout_adresse_vue"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bouton_pen_adresse_vue"
+                android:src="@drawable/pen"
+                android:background="@null"
+                android:contentDescription="@string/content_description_vue"
+                app:layout_constraintRight_toRightOf="@id/layout_adresse_vue"
+                app:layout_constraintTop_toTopOf="@id/layout_adresse_vue"
+                app:layout_constraintBottom_toBottomOf="@id/layout_adresse_vue"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/balise_telephone_vue"
+            android:text="@string/balise_telephone_vue"
+            android:textSize="@dimen/balises_vue"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@id/layout_fournisseur_vue"
+            app:layout_constraintRight_toRightOf="@id/layout_fournisseur_vue"
+            app:layout_constraintTop_toBottomOf="@id/layout_adresse_vue"
+            app:layout_constraintBottom_toTopOf="@id/layout_telephone_vue"/>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/layout_telephone_vue"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="@id/layout_fournisseur_vue"
+            app:layout_constraintRight_toRightOf="@id/layout_fournisseur_vue"
+            app:layout_constraintTop_toBottomOf="@id/balise_telephone_vue"
+            app:layout_constraintBottom_toTopOf="@id/balise_mail_vue">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/telephone_fournisseur_vue"
+                android:text="@string/telephone_vue"
+                app:layout_constraintLeft_toLeftOf="@id/layout_telephone_vue"
+                app:layout_constraintTop_toTopOf="@id/layout_telephone_vue"
+                app:layout_constraintBottom_toBottomOf="@id/layout_telephone_vue"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bouton_pen_telephone_vue"
+                android:src="@drawable/pen"
+                android:background="@null"
+                android:contentDescription="@string/content_description_vue"
+                app:layout_constraintRight_toRightOf="@id/layout_telephone_vue"
+                app:layout_constraintTop_toTopOf="@id/layout_telephone_vue"
+                app:layout_constraintBottom_toBottomOf="@id/layout_telephone_vue"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/balise_mail_vue"
+            android:text="@string/balise_mail_vue"
+            android:textSize="@dimen/balises_vue"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@id/layout_fournisseur_vue"
+            app:layout_constraintRight_toRightOf="@id/layout_fournisseur_vue"
+            app:layout_constraintTop_toBottomOf="@id/layout_telephone_vue"
+            app:layout_constraintBottom_toTopOf="@id/layout_mail_vue"/>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/layout_mail_vue"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="@id/layout_fournisseur_vue"
+            app:layout_constraintRight_toRightOf="@id/layout_fournisseur_vue"
+            app:layout_constraintTop_toBottomOf="@id/balise_mail_vue"
+            app:layout_constraintBottom_toTopOf="@id/balise_description_vue">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mail_fournisseur_vue"
+                android:text="@string/mail_vue"
+                app:layout_constraintLeft_toLeftOf="@id/layout_mail_vue"
+                app:layout_constraintTop_toTopOf="@id/layout_mail_vue"
+                app:layout_constraintBottom_toBottomOf="@id/layout_mail_vue"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bouton_pen_mail_vue"
+                android:src="@drawable/pen"
+                android:background="@null"
+                android:contentDescription="@string/content_description_vue"
+                app:layout_constraintRight_toRightOf="@id/layout_mail_vue"
+                app:layout_constraintTop_toTopOf="@id/layout_mail_vue"
+                app:layout_constraintBottom_toBottomOf="@id/layout_mail_vue"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/balise_description_vue"
+            android:text="@string/balise_description_vue"
+            android:textSize="@dimen/balises_vue"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@id/layout_fournisseur_vue"
+            app:layout_constraintRight_toRightOf="@id/layout_fournisseur_vue"
+            app:layout_constraintTop_toBottomOf="@id/layout_mail_vue"
+            app:layout_constraintBottom_toTopOf="@id/layout_description_vue"/>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/layout_description_vue"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="@id/layout_fournisseur_vue"
+            app:layout_constraintRight_toRightOf="@id/layout_fournisseur_vue"
+            app:layout_constraintTop_toBottomOf="@id/balise_description_vue"
+            app:layout_constraintBottom_toTopOf="@id/balise_localisation_vue">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/description_fournisseur_vue"
+                android:text="@string/description_vue"
+                app:layout_constraintLeft_toLeftOf="@id/layout_description_vue"
+                app:layout_constraintTop_toTopOf="@id/layout_description_vue"
+                app:layout_constraintBottom_toBottomOf="@id/layout_description_vue"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bouton_pen_description_vue"
+                android:src="@drawable/pen"
+                android:background="@null"
+                android:contentDescription="@string/content_description_vue"
+                app:layout_constraintRight_toRightOf="@id/layout_description_vue"
+                app:layout_constraintTop_toTopOf="@id/layout_description_vue"
+                app:layout_constraintBottom_toBottomOf="@id/layout_description_vue"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/balise_localisation_vue"
+            android:text="@string/localisation_vue"
+            android:textSize="@dimen/balises_vue"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@id/layout_fournisseur_vue"
+            app:layout_constraintRight_toRightOf="@id/layout_fournisseur_vue"
+            app:layout_constraintTop_toBottomOf="@id/layout_description_vue"
+            app:layout_constraintBottom_toTopOf="#"/>
+
+        <!-- Mettre la localisation -->
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bouton_retour_vue"
+        android:text="@string/bouton_retour_vue"
+        android:background="@drawable/boutons"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_fournisseur_vue"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

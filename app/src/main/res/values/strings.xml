@@ -1,6 +1,21 @@
 <resources>
     <string name="app_name">ViaBrico</string>
-    <string name="user">Username</string>
-    <string name="password">Password</string>
+    <string name="user">Nom d\'utilisateur</string>
+    <string name="password">Mot de passe</string>
     <string name="button_co">Connexion</string>
+    <string name="nom_fournisseur">M.Dupond</string>
+    <string name="description">Lorem Ipsum</string>
+    <string name="fiche_vue">Fiche détaillée</string>
+    <string name="balise_name_vue">Nom</string>
+    <string name="balise_adresse_vue">Adresse</string>
+    <string name="adresse_vue">8 rue des Acacias, 44000 Nantes</string>
+    <string name="balise_telephone_vue">Téléphone</string>
+    <string name="telephone_vue">06.12.34.56.78</string>
+    <string name="balise_mail_vue">Mail</string>
+    <string name="mail_vue">xyz@example.com</string>
+    <string name="balise_description_vue">Description</string>
+    <string name="description_vue">Lorem Ipsum</string>
+    <string name="localisation_vue">Localisation</string>
+    <string name="bouton_retour_vue">Retour</string>
+    <string name="content_description_vue">Modification des informations du fournisseur</string>
 </resources>
