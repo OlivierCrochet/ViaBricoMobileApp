@@ -1,8 +1,10 @@
 package com.example.viabrico;
 
+import android.content.Intent;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -66,5 +68,55 @@ public class fournisseurVueActivity extends AppCompatActivity {
         mBoutonPenDescriptionVue = (ImageButton) findViewById(R.id.bouton_pen_description_vue);
         mBaliseLocalisationVue = (TextView) findViewById(R.id.balise_localisation_vue);
         mBoutonRetourVue = (Button) findViewById(R.id.bouton_retour_vue);
+
+        mBoutonRetourVue.setEnabled(true);
+        mBoutonPenNameVue.setEnabled(true);
+        mBoutonPenAdresseVue.setEnabled(true);
+        mBoutonPenTelephoneVue.setEnabled(true);
+        mBoutonPenMailVue.setEnabled(true);
+        mBoutonPenDescriptionVue.setEnabled(true);
+
+        mBoutonRetourVue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent retour = new Intent(fournisseurVueActivity.this, fournisseurActivity.class);
+                startActivity(retour);
+            }
+        });
+
+        mBoutonPenNameVue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /* Ajout de la méthode modif */
+            }
+        });
+
+        mBoutonPenAdresseVue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /* Ajout de la méthode modif */
+            }
+        });
+
+        mBoutonPenTelephoneVue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /* Ajout de la méthode modif */
+            }
+        });
+
+        mBoutonPenMailVue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /* Ajout de la méthode modif */
+            }
+        });
+
+        mBoutonPenDescriptionVue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /* Ajout de la méthode modif */
+            }
+        });
     }
 }

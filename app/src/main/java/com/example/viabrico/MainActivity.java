@@ -11,6 +11,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         mUser = (EditText) findViewById(R.id.saisie_user);
         mPassword = (EditText) findViewById(R.id.saisie_password);
         mConnexion = (Button) findViewById(R.id.button_connexion);
+
+
 
         mConnexion.setEnabled(true);
         mUser.addTextChangedListener(new TextWatcher() {
@@ -50,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent fournisseurActivity = new Intent(MainActivity.this, fournisseurActivity.class);
                 startActivity(fournisseurActivity);
+                Toast.makeText(MainActivity.this, "Bonjour " + mUser.getText() + " !", Toast.LENGTH_SHORT).show();
             }
         });
 

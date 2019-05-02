@@ -10,6 +10,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONObject;
+
+import java.lang.Exception;
 
 public class fournisseurAjoutActivity extends AppCompatActivity {
 
@@ -50,21 +63,42 @@ public class fournisseurAjoutActivity extends AppCompatActivity {
         mBoutonAnnuler = (Button) findViewById(R.id.annuler_bouton);
         mBoutonAjouter = (Button) findViewById(R.id.ajouter_bouton_ajout);
 
+        
 
         mBoutonAnnuler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                RequestQueue queue2 = (RequestQueue) Volley.newRequestQueue(fournisseurAjoutActivity.this);
+                String url2 ="https://viabricosrm.herokuapp.com/user";
+                StringRequest strRequest2 = new StringRequest(Request.Method.POST, url2,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response2) {
+                                // Display the first 500 characters of the response string.
+                                System.out.println("Marche stp 2!");
+                                Toast.makeText(fournisseurAjoutActivity.this,"Response is: " + response2.substring(0, 500), Toast.LENGTH_SHORT);
+                            }
+                        }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        System.out.println("Marche pas stp 2!");
+                        Toast.makeText(fournisseurAjoutActivity.this,"That didn't work!", Toast.LENGTH_SHORT);
+                    }
+                });
+
                 Intent annuler = new Intent(fournisseurAjoutActivity.this, fournisseurActivity.class);
                 startActivity(annuler);
+                queue2.add(strRequest2);
             }
         });
 
         mBoutonAjouter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /* Ajouter une méthode add */
+
                 Intent ajouter = new Intent(fournisseurAjoutActivity.this, fournisseurActivity.class);
                 startActivity(ajouter);
+
             }
         });
 

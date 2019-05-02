@@ -12,6 +12,14 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 public class fournisseurActivity extends AppCompatActivity {
 
@@ -41,6 +49,27 @@ public class fournisseurActivity extends AppCompatActivity {
         mLayoutBouton = (ConstraintLayout) findViewById(R.id.layout_button);
         mAjoutBouton = (Button) findViewById(R.id.button_ajout);
 
+
+        RequestQueue queue = (RequestQueue) Volley.newRequestQueue(fournisseurActivity.this);
+        String url ="https://viabricosrm.herokuapp.com/fournisseur";
+        StringRequest strRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        // Display the first 500 characters of the response string.
+                        System.out.println("Marche stp !");
+                        Toast.makeText(fournisseurActivity.this,"Response is: " + response.substring(0, 500), Toast.LENGTH_SHORT);
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                System.out.println("Marche pas stp !");
+                Toast.makeText(fournisseurActivity.this,"That didn't work!", Toast.LENGTH_SHORT);
+            }
+        });
+
+        queue.add(strRequest);
+
         mVueBouton.setEnabled(true);
         mSuppBouton.setEnabled(true);
         mAjoutBouton.setEnabled(true);
@@ -63,6 +92,8 @@ public class fournisseurActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         fournisseurActivity.this.finish();
+                        /* Ajout de la méthode delete */
+
                     }
 
 

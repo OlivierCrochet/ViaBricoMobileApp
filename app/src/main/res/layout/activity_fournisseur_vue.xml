@@ -273,8 +273,7 @@
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="@id/layout_fournisseur_vue"
             app:layout_constraintRight_toRightOf="@id/layout_fournisseur_vue"
-            app:layout_constraintTop_toBottomOf="@id/layout_description_vue"
-            app:layout_constraintBottom_toTopOf="#"/>
+            app:layout_constraintTop_toBottomOf="@id/layout_description_vue" />
 
         <!-- Mettre la localisation -->
 
