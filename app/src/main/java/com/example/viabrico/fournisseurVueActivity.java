@@ -4,10 +4,15 @@ import android.content.Intent;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import com.google.gson.Gson;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 
 public class fournisseurVueActivity extends AppCompatActivity {
 
@@ -35,11 +40,11 @@ public class fournisseurVueActivity extends AppCompatActivity {
     private ConstraintLayout mLayoutDescriptionVue;
     private TextView mDescriptionFournisseurVue;
     private ImageButton mBoutonPenDescriptionVue;
-    private TextView mBaliseLocalisationVue;
     private Button mBoutonRetourVue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Déclaration des widgets
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fournisseur_vue);
         mLayoutVue = (ConstraintLayout) findViewById(R.id.layout_vue);
@@ -66,9 +71,9 @@ public class fournisseurVueActivity extends AppCompatActivity {
         mLayoutDescriptionVue = (ConstraintLayout) findViewById(R.id.layout_description_vue);
         mDescriptionFournisseurVue = (TextView) findViewById(R.id.description_fournisseur_vue);
         mBoutonPenDescriptionVue = (ImageButton) findViewById(R.id.bouton_pen_description_vue);
-        mBaliseLocalisationVue = (TextView) findViewById(R.id.balise_localisation_vue);
         mBoutonRetourVue = (Button) findViewById(R.id.bouton_retour_vue);
 
+        // Activation des boutons
         mBoutonRetourVue.setEnabled(true);
         mBoutonPenNameVue.setEnabled(true);
         mBoutonPenAdresseVue.setEnabled(true);
@@ -87,35 +92,151 @@ public class fournisseurVueActivity extends AppCompatActivity {
         mBoutonPenNameVue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /* Ajout de la méthode modif */
+                /* Ajout de la méthode PUT */
+
+                AsyncHttpClient client = new AsyncHttpClient();
+
+
+                client.put("https://viabricosrm.herokuapp.com/api/fournisseur", new AsyncHttpResponseHandler()
+                {
+                    @Override
+                    public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, byte[] responseBody) {
+                        // Action si la requête fonctionne
+
+                        Log.i("objJson", "success");
+                        String ret = new String(responseBody);
+                        Gson gson = new Gson();
+                    }
+
+                    @Override
+                    public void onFailure(int statusCode, cz.msebera.android.httpclient.Header[] headers, byte[] responseBody, Throwable error) {
+                        // Action si la requête ne fonctionne pas
+
+                        System.out.println(responseBody);
+                    }
+
+                });
+
             }
         });
 
         mBoutonPenAdresseVue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /* Ajout de la méthode modif */
+                /* Ajout de la méthode PUT */
+
+                AsyncHttpClient client = new AsyncHttpClient();
+
+
+                client.put("https://viabricosrm.herokuapp.com/api/fournisseur", new AsyncHttpResponseHandler()
+                {
+                    @Override
+                    public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, byte[] responseBody) {
+                        // Action si la requête fonctionne
+
+                        Log.i("objJson", "success");
+                        String ret = new String(responseBody);
+                        Gson gson = new Gson();
+                    }
+
+                    @Override
+                    public void onFailure(int statusCode, cz.msebera.android.httpclient.Header[] headers, byte[] responseBody, Throwable error) {
+                        // Action si la requête ne fonctionne pas
+
+                        System.out.println(responseBody);
+                    }
+
+                });
             }
         });
 
         mBoutonPenTelephoneVue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /* Ajout de la méthode modif */
+                /* Ajout de la méthode PUT */
+
+                AsyncHttpClient client = new AsyncHttpClient();
+
+
+                client.put("https://viabricosrm.herokuapp.com/api/fournisseur", new AsyncHttpResponseHandler()
+                {
+                    @Override
+                    public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, byte[] responseBody) {
+                        // Action si la requête fonctionne
+
+                        Log.i("objJson", "success");
+                        String ret = new String(responseBody);
+                        Gson gson = new Gson();
+                    }
+
+                    @Override
+                    public void onFailure(int statusCode, cz.msebera.android.httpclient.Header[] headers, byte[] responseBody, Throwable error) {
+                        // Action si la requête ne fonctionne pas
+
+                        System.out.println(responseBody);
+                    }
+
+                });
             }
         });
 
         mBoutonPenMailVue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /* Ajout de la méthode modif */
+                /* Ajout de la méthode PUT */
+
+                AsyncHttpClient client = new AsyncHttpClient();
+
+
+                client.put("https://viabricosrm.herokuapp.com/api/fournisseur", new AsyncHttpResponseHandler()
+                {
+                    @Override
+                    public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, byte[] responseBody) {
+                        // Action si la requête fonctionne
+
+                        Log.i("objJson", "success");
+                        String ret = new String(responseBody);
+                        Gson gson = new Gson();
+                    }
+
+                    @Override
+                    public void onFailure(int statusCode, cz.msebera.android.httpclient.Header[] headers, byte[] responseBody, Throwable error) {
+                        // Action si la requête ne fonctionne pas
+
+                        System.out.println(responseBody);
+                    }
+
+                });
             }
         });
 
         mBoutonPenDescriptionVue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /* Ajout de la méthode modif */
+                /* Ajout de la méthode PUT */
+
+                AsyncHttpClient client = new AsyncHttpClient();
+
+
+                client.put("https://viabricosrm.herokuapp.com/api/fournisseur", new AsyncHttpResponseHandler()
+                {
+                    @Override
+                    public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, byte[] responseBody) {
+                        // Action si la requête fonctionne
+
+                        Log.i("objJson", "success");
+                        String ret = new String(responseBody);
+                        Gson gson = new Gson();
+                    }
+
+                    @Override
+                    public void onFailure(int statusCode, cz.msebera.android.httpclient.Header[] headers, byte[] responseBody, Throwable error) {
+                        // Action si la requête ne fonctionne pas
+
+                        System.out.println(responseBody);
+                    }
+
+                });
             }
         });
     }

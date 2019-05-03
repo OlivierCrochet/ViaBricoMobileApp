@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,6 +22,10 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONObject;
+import com.example.viabrico.fournisseurActivity;
+import com.google.gson.Gson;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import java.lang.Exception;
 
@@ -44,6 +49,7 @@ public class fournisseurAjoutActivity extends AppCompatActivity {
     private Button mBoutonAjouter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Déclaration des widgets
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fournisseur_ajout);
         mNomApp = (TextView) findViewById(R.id.ajout_nom_app);
@@ -68,42 +74,46 @@ public class fournisseurAjoutActivity extends AppCompatActivity {
         mBoutonAnnuler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RequestQueue queue2 = (RequestQueue) Volley.newRequestQueue(fournisseurAjoutActivity.this);
-                String url2 ="https://viabricosrm.herokuapp.com/user";
-                StringRequest strRequest2 = new StringRequest(Request.Method.POST, url2,
-                        new Response.Listener<String>() {
-                            @Override
-                            public void onResponse(String response2) {
-                                // Display the first 500 characters of the response string.
-                                System.out.println("Marche stp 2!");
-                                Toast.makeText(fournisseurAjoutActivity.this,"Response is: " + response2.substring(0, 500), Toast.LENGTH_SHORT);
-                            }
-                        }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        System.out.println("Marche pas stp 2!");
-                        Toast.makeText(fournisseurAjoutActivity.this,"That didn't work!", Toast.LENGTH_SHORT);
-                    }
-                });
-
+                // Annulation de l'ajout
                 Intent annuler = new Intent(fournisseurAjoutActivity.this, fournisseurActivity.class);
                 startActivity(annuler);
-                queue2.add(strRequest2);
             }
         });
 
         mBoutonAjouter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Ajout de la méthode POST
 
+                AsyncHttpClient client = new AsyncHttpClient();
+
+
+                client.post("https://viabricosrm.herokuapp.com/api/fournisseur", new AsyncHttpResponseHandler()
+                {
+                    @Override
+                    public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, byte[] responseBody) {
+                        // Action si la requête fonctionne
+
+                        Log.i("objJson", "success");
+                        String ret = new String(responseBody);
+                        Gson gson = new Gson();
+                    }
+
+                    @Override
+                    public void onFailure(int statusCode, cz.msebera.android.httpclient.Header[] headers, byte[] responseBody, Throwable error) {
+                        // Action si la requête ne fonctionne pas
+
+                        System.out.println(responseBody);
+                    }
+
+                });
                 Intent ajouter = new Intent(fournisseurAjoutActivity.this, fournisseurActivity.class);
                 startActivity(ajouter);
 
             }
         });
 
-        /* Ajout de la méthode GET */
-
+        // Déclaration des champs de saisie
         mNameAjout.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -117,6 +127,7 @@ public class fournisseurAjoutActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
+
 
             }
         });

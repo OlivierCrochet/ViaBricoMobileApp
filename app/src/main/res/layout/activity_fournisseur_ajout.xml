@@ -7,12 +7,13 @@
     tools:context=".fournisseurAjoutActivity"
     android:background="@drawable/gradient">
 
+    <!-- Déclaration des widgets, layouts et boutons permettant d'avoir le visuel de l'application -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/ajout_nom_app"
         android:text="@string/app_name"
-        android:textSize="30sp"
+        android:textSize="@dimen/size_nom_app_all"
         android:gravity="center"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -23,8 +24,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/ajout_fournisseur_texte"
-        android:text="Ajout d'un fournisseur"
-        android:textSize="25sp"
+        android:text="@string/content_ajout"
+        android:textSize="@dimen/size_content_ajout"
         android:gravity="center"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -41,128 +42,128 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:orientation="vertical"
         android:background="@drawable/border"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp">
+        android:layout_marginLeft="@dimen/margin_layout_secondaire_fournisseur_ajout"
+        android:layout_marginRight="@dimen/margin_layout_secondaire_fournisseur_ajout">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/balise_name_ajout"
-            android:text="Name"
-            android:textSize="20sp"
+            android:text="@string/balise_name"
+            android:textSize="@dimen/balises"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="@id/layout_fournisseur_ajout"
             app:layout_constraintRight_toRightOf="@id/layout_fournisseur_ajout"
             app:layout_constraintTop_toTopOf="@id/layout_fournisseur_ajout"
             app:layout_constraintBottom_toTopOf="@id/name_fournisseur_ajout"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginLeft="@dimen/margin_cotes_balises_fournisseur_ajout"
+            android:layout_marginTop="@dimen/margin_cotes_balises_fournisseur_ajout"/>
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/name_fournisseur_ajout"
-            android:hint="Nom du fournisseur"
-            android:textSize="10sp"
+            android:hint="@string/edittext_nom_fournisseur_ajout"
+            android:textSize="@dimen/size_champs_fournisseur_ajout"
             app:layout_constraintLeft_toLeftOf="@id/layout_fournisseur_ajout"
             app:layout_constraintTop_toBottomOf="@id/balise_name_ajout"
             app:layout_constraintBottom_toTopOf="@id/balise_adresse_ajout"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginLeft="@dimen/margin_cotes_champs_fournisseur_ajout"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/balise_adresse_ajout"
-            android:text="Adresse"
-            android:textSize="20sp"
+            android:text="@string/balise_adresse"
+            android:textSize="@dimen/balises"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="@id/layout_fournisseur_ajout"
             app:layout_constraintRight_toRightOf="@id/layout_fournisseur_ajout"
             app:layout_constraintTop_toBottomOf="@id/name_fournisseur_ajout"
             app:layout_constraintBottom_toTopOf="@id/adresse_ajout"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginLeft="@dimen/margin_cotes_balises_fournisseur_ajout"/>
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/adresse_ajout"
-            android:textSize="10sp"
-            android:hint="Numéro, rue et ville"
+            android:textSize="@dimen/size_champs_fournisseur_ajout"
+            android:hint="@string/edittext_adresse_fournisseur_ajout"
             app:layout_constraintLeft_toLeftOf="@id/layout_fournisseur_ajout"
             app:layout_constraintTop_toBottomOf="@id/balise_adresse_ajout"
             app:layout_constraintBottom_toTopOf="@id/balise_telephone_ajout"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginLeft="@dimen/margin_cotes_champs_fournisseur_ajout"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/balise_telephone_ajout"
-            android:text="Téléphone"
-            android:textSize="20sp"
+            android:text="@string/balise_telephone"
+            android:textSize="@dimen/balises"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="@id/layout_fournisseur_ajout"
             app:layout_constraintRight_toRightOf="@id/layout_fournisseur_ajout"
             app:layout_constraintTop_toBottomOf="@id/adresse_ajout"
             app:layout_constraintBottom_toTopOf="@+id/ajout_telephone"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginLeft="@dimen/margin_cotes_balises_fournisseur_ajout"/>
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/ajout_telephone"
-            android:hint="06.12.34.56.78"
-            android:textSize="10sp"
+            android:hint="@string/edittext_telephone_fournisseur_ajout"
+            android:textSize="@dimen/size_champs_fournisseur_ajout"
             app:layout_constraintLeft_toLeftOf="@id/layout_fournisseur_ajout"
             app:layout_constraintTop_toBottomOf="@id/balise_telephone_ajout"
             app:layout_constraintBottom_toTopOf="@+id/balise_mail_ajout"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginLeft="@dimen/margin_cotes_champs_fournisseur_ajout"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/balise_mail_ajout"
-            android:text="Mail"
-            android:textSize="20sp"
+            android:text="@string/balise_mail"
+            android:textSize="@dimen/balises"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="@id/layout_fournisseur_ajout"
             app:layout_constraintRight_toRightOf="@id/layout_fournisseur_ajout"
             app:layout_constraintTop_toBottomOf="@id/ajout_telephone"
             app:layout_constraintBottom_toTopOf="@+id/ajout_mail"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginLeft="@dimen/margin_cotes_balises_fournisseur_ajout"/>
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/ajout_mail"
-            android:hint="xyz@example.com"
-            android:textSize="10sp"
+            android:hint="@string/edittext_mail_fournisseur_ajout"
+            android:textSize="@dimen/size_champs_fournisseur_ajout"
             app:layout_constraintLeft_toLeftOf="@id/layout_fournisseur_ajout"
             app:layout_constraintTop_toBottomOf="@id/balise_mail_ajout"
             app:layout_constraintBottom_toTopOf="@+id/balise_description_ajout"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginLeft="@dimen/margin_cotes_champs_fournisseur_ajout"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/balise_description_ajout"
-            android:text="Description"
-            android:textSize="20sp"
+            android:text="@string/balise_description"
+            android:textSize="@dimen/balises"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="@id/layout_fournisseur_ajout"
             app:layout_constraintTop_toBottomOf="@id/ajout_mail"
             app:layout_constraintBottom_toTopOf="@+id/ajout_description"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginLeft="@dimen/margin_cotes_balises_fournisseur_ajout"/>
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/ajout_description"
-            android:hint="Lorem Ipsum"
-            android:textSize="10sp"
+            android:hint="@string/edittext_description_fournisseur_ajout"
+            android:textSize="@dimen/size_champs_fournisseur_ajout"
             app:layout_constraintLeft_toLeftOf="@id/layout_fournisseur_ajout"
             app:layout_constraintTop_toBottomOf="@id/balise_description_ajout"
             app:layout_constraintBottom_toTopOf="@id/layout_bouton_ajout"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginLeft="@dimen/margin_cotes_champs_fournisseur_ajout"/>
 
 
         <android.support.constraint.ConstraintLayout
@@ -174,30 +175,34 @@
             app:layout_constraintRight_toRightOf="@id/layout_fournisseur_ajout"
             app:layout_constraintTop_toBottomOf="@id/ajout_description"
             app:layout_constraintBottom_toBottomOf="@id/layout_fournisseur_ajout"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp">
+            android:layout_marginTop="@dimen/margin_top_layout_buttons_fournisseur_ajout"
+            android:layout_marginBottom="@dimen/margin_bot_layout_buttons_fournisseur_ajout">
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/annuler_bouton"
-                android:text="ANNULER"
+                android:text="@string/button_annuler"
                 app:layout_constraintLeft_toLeftOf="@id/layout_bouton_ajout"
                 app:layout_constraintRight_toRightOf="@id/ajouter_bouton_ajout"
                 app:layout_constraintTop_toTopOf="@id/layout_bouton_ajout"
                 app:layout_constraintBottom_toBottomOf="@id/layout_bouton_ajout"
-                android:background="@drawable/boutons"/>
+                android:background="@drawable/boutons"
+                android:layout_marginRight="@dimen/margin_cotes_buttons_fournisseur_ajout"
+                android:layout_marginBottom="@dimen/margin_bot_buttons_fournisseur_ajout"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/ajouter_bouton_ajout"
-                android:text="AJOUTER"
+                android:text="@string/button_ajouter"
                 app:layout_constraintLeft_toLeftOf="@id/annuler_bouton"
                 app:layout_constraintRight_toRightOf="@id/layout_bouton_ajout"
                 app:layout_constraintTop_toTopOf="@id/layout_bouton_ajout"
                 app:layout_constraintBottom_toBottomOf="@id/layout_bouton_ajout"
-                android:background="@drawable/boutons"/>
+                android:background="@drawable/boutons"
+                android:layout_marginLeft="@dimen/margin_cotes_buttons_fournisseur_ajout"
+                android:layout_marginBottom="@dimen/margin_bot_buttons_fournisseur_ajout"/>
 
         </android.support.constraint.ConstraintLayout>
 

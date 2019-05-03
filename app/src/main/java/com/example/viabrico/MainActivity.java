@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private Button mConnexion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //Déclaration des widgets
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mUser = (EditText) findViewById(R.id.saisie_user);
@@ -34,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         mConnexion = (Button) findViewById(R.id.button_connexion);
 
 
-
+        // Activation du bouton et des champs de saisie
         mConnexion.setEnabled(true);
         mUser.addTextChangedListener(new TextWatcher() {
             @Override
@@ -58,9 +60,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                // Démarrage de l'activité
                 Intent fournisseurActivity = new Intent(MainActivity.this, fournisseurActivity.class);
                 startActivity(fournisseurActivity);
-                Toast.makeText(MainActivity.this, "Bonjour " + mUser.getText() + " !", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Bienvenue " + mUser.getText() + " !", Toast.LENGTH_SHORT).show();
             }
         });
 

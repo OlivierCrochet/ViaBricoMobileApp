@@ -8,18 +8,19 @@
     android:background="@drawable/gradient"
     android:orientation="vertical">
 
+    <!-- Déclaration des widgets, layouts et boutons permettant d'avoir le visuel de l'application -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/app_name"
-        android:textSize="30sp"
+        android:textSize="@dimen/size_nom_app_all"
         android:id="@+id/name_app"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="parent"
-        android:paddingTop="100dp"
+        android:paddingTop="@dimen/padding_top_name_app_fournisseur_activity"
         />
 
 
@@ -33,22 +34,22 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/name_app"
         app:layout_constraintBottom_toTopOf="@id/button_ajout"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
+        android:layout_marginLeft="@dimen/margin_cotes_layout_fournisseur_activity"
+        android:layout_marginRight="@dimen/margin_cotes_layout_fournisseur_activity">
 
             <TextView
                 android:id="@+id/balise_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Name"
-                android:textSize="20sp"
+                android:text="@string/balise_name"
+                android:textSize="@dimen/balises"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="@id/layout_fournisseur"
                 app:layout_constraintRight_toRightOf="@id/layout_fournisseur"
                 app:layout_constraintTop_toBottomOf="@id/layout_fournisseur"
                 app:layout_constraintBottom_toTopOf="@id/name_fournisseur"
-                android:paddingLeft="20dp"
-                android:paddingTop="20dp"/>
+                android:paddingLeft="@dimen/padding_top_balises_fournisseur_activity"
+                android:paddingTop="@dimen/padding_top_balises_fournisseur_activity"/>
 
             <TextView
                 android:id="@+id/name_fournisseur"
@@ -59,22 +60,22 @@
                 app:layout_constraintRight_toRightOf="@id/layout_fournisseur"
                 app:layout_constraintTop_toBottomOf="@id/balise_name"
                 app:layout_constraintBottom_toTopOf="@id/balise_description"
-                android:paddingLeft="20dp"
-                android:paddingTop="5dp"/>
+                android:paddingLeft="@dimen/padding_top_balises_fournisseur_activity"
+                android:paddingTop="@dimen/padding_top_donnees_fournisseur_activity"/>
 
             <TextView
                 android:id="@+id/balise_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Description"
-                android:textSize="20sp"
+                android:text="@string/balise_description"
+                android:textSize="@dimen/balises"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="@id/layout_fournisseur"
                 app:layout_constraintRight_toRightOf="@id/layout_fournisseur"
                 app:layout_constraintTop_toBottomOf="@id/name_fournisseur"
                 app:layout_constraintBottom_toTopOf="@id/description"
-                android:paddingLeft="20dp"
-                android:paddingTop="20dp"/>
+                android:paddingLeft="@dimen/padding_top_balises_fournisseur_activity"
+                android:paddingTop="@dimen/padding_left_donnees_fournisseur_activity"/>
 
             <TextView
                 android:id="@+id/description"
@@ -85,14 +86,15 @@
                 app:layout_constraintRight_toRightOf="@id/layout_fournisseur"
                 app:layout_constraintTop_toBottomOf="@id/balise_description"
                 app:layout_constraintBottom_toTopOf="@id/layout_button"
-                android:paddingLeft="20dp"
-                android:paddingTop="5dp"/>
+                android:paddingLeft="@dimen/padding_left_donnees_fournisseur_activity"
+                android:paddingTop="@dimen/padding_top_donnees_fournisseur_activity"/>
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/layout_button"
             android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/margin_bot_layout_buttons_fournisseur_activity"
             app:layout_constraintLeft_toLeftOf="@id/layout_fournisseur"
             app:layout_constraintRight_toRightOf="@id/layout_fournisseur"
             app:layout_constraintTop_toBottomOf="@id/description"
@@ -103,7 +105,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/button_vue"
                 android:src="@drawable/eye"
-                android:layout_marginRight="70dp"
+                android:layout_marginRight="@dimen/margin_boutton_eye_fournisseur_activity"
                 app:layout_constraintRight_toRightOf="@id/layout_button"
                 app:layout_constraintTop_toTopOf="@id/layout_button"
                 app:layout_constraintTop_toBottomOf="@id/layout_button"
@@ -114,7 +116,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/button_supp"
                 android:src="@drawable/trash"
-                android:layout_marginRight="40dp"
+                android:layout_marginRight="@dimen/margin_boutton_trash_fournisseur_activity"
                 app:layout_constraintRight_toRightOf="@id/layout_button"
                 app:layout_constraintTop_toBottomOf="@id/layout_button"
                 app:layout_constraintBottom_toBottomOf="@id/layout_button"
@@ -127,7 +129,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button_ajout"
-        android:hint="AJOUTER"
+        android:hint="@string/button_ajouter"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/layout_fournisseur"
