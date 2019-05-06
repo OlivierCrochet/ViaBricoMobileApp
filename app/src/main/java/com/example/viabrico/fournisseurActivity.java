@@ -120,7 +120,7 @@ public class fournisseurActivity extends AppCompatActivity {
                             @Override
                             public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, byte[] responseBody) {
                                 // Action si la requête fonctionne
-
+                                System.out.println("Request successful");
                                 Log.i("objJson", "success");
                                 String ret = new String(responseBody);
                                 Gson gson = new Gson();
@@ -129,7 +129,7 @@ public class fournisseurActivity extends AppCompatActivity {
                             @Override
                             public void onFailure(int statusCode, cz.msebera.android.httpclient.Header[] headers, byte[] responseBody, Throwable error) {
                                 // Action si la requête ne fonctionne pas
-
+                                System.out.println("Request unsuccessful");
                                 System.out.println(responseBody);
                             }
 
